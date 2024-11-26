@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrendamiento - Firma Car</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo_firma_car.png" alt="Logo de Firma Car">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html" class="contact">Contacto</a></li>
+                <li><a href="acceso-en-linea.html">Acceso en línea</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Arrendamiento Section -->
+    <section class="leasing">
+        <div class="leasing-header">
+            <h1>Arrendamiento Inteligente</h1>
+            <p>Descubre los beneficios de estrenar un auto sin preocupaciones con nuestro servicio de arrendamiento.</p>
+        </div>
+
+        <!-- Beneficios -->
+        <div class="benefits">
+            <h2>Beneficios del Arrendamiento</h2>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <img src="images/pago_mensual.png" alt="Pagos Mensuales">
+                    <h3>Pagos Mensuales Accesibles</h3>
+                    <p>Mantén tus finanzas estables con pagos cómodos y accesibles.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="images/mantenimiento.png" alt="Mantenimiento Incluido">
+                    <h3>Mantenimiento Incluido</h3>
+                    <p>Nos encargamos del mantenimiento para que tú solo disfrutes el camino.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="images/flexibilidad.png" alt="Flexibilidad">
+                    <h3>Flexibilidad</h3>
+                    <p>Opciones para cambiar de vehículo y ajustarse a tus necesidades.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="images/renovacion.png" alt="Renovación">
+                    <h3>Renovación</h3>
+                    <p>Renueva tu contrato o compra el auto al final del arrendamiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceso de Arrendamiento -->
+        <div class="leasing-process">
+            <h2>Cómo Funciona</h2>
+            <ol class="process-steps">
+                <li><strong>1. Selección del Vehículo:</strong> Escoge el auto que mejor se adapte a tus necesidades.</li>
+                <li><strong>2. Solicitud:</strong> Llena nuestra solicitud en línea o visítanos en sucursal.</li>
+                <li><strong>3. Evaluación:</strong> Procesamos tu solicitud y te ofrecemos opciones personalizadas.</li>
+                <li><strong>4. Disfruta tu Auto:</strong> Una vez aprobado, estrena y disfruta tu nuevo auto.</li>
+            </ol>
+            <a href="contacto.html" class="cta-button">Solicitar Arrendamiento</a>
+        </div>
+    </section>
+
+    <!-- Caja de Contacto -->
+    <div class="contact-box">
+        <h2>Contáctanos para más información</h2>
+        <p>¿Tienes preguntas? Estamos aquí para ayudarte. No dudes en contactarnos.</p>
+        <a href="contacto.html">Ir al formulario de contacto</a>
+    </div>
+
+    <!-- Styles -->
+    <style>
+        /* Fondo y fuente */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Sección Arrendamiento */
+        .leasing {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .leasing-header h1 {
+            font-size: 2.5em;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .leasing-header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Beneficios */
+        .benefits h2 {
+            font-size: 2em;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        .benefit-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: calc(50% - 10px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: scale(1.05);
+        }
+
+        .benefit-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Proceso de Arrendamiento */
+        .leasing-process h2 {
+            font-size: 2em;
+            color: #222;
+            margin: 40px 0 20px;
+        }
+
+        .process-steps {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .process-steps li {
+            font-size: 1.2em;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* Botón de llamada a la acción */
+        .cta-button {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d62828;
+        }
+
+        /* Caja de Contacto */
+        .contact-box {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-box h2 {
+            font-size: 2em;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-box a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>

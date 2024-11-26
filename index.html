@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel Fijo con Secciones</title>
+    <style>
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gotham', sans-serif;
+        }
+
+        /*titulos*/
+
+        /* Tipografías de Gotham */
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/GothamBold.ttf') format('ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham-Light.otf') format('oft');
+    font-weight: 300;
+}
+
+        /* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+p{
+    font-weight: 300}
+
+        /* Header Fijo */
+        header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff; /* Fondo blanco */
+    padding-top: 30px;
+    padding-left: 30px;
+    border-bottom: 2px solid red; /* Línea roja */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000; /* Texto en negro */
+}
+
+.logo img{
+    width: 70%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000; /* Enlaces en negro */
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #000000; /* Hover en negro */
+}
+
+/* Animación de subrayado al seleccionar */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #000000;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    transform: scaleX(1); /* Subrayado visible */
+}
+
+     
+        
+
+/* Carrusel Fijo */
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ocupa la pantalla completa */
+    overflow: hidden;
+    z-index: -1; /* Se coloca detrás del contenido */
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 5s ease-in-out, transform 5s ease-in-out;
+    /* Agregar una transición suave en la transformación */
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 5s ease-in-out; /* Transición suave en la transformación */
+}
+        /* Indicadores Circulares */
+        .indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 4, 4, 0.7);
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: rgb(124, 3, 3);
+        }
+
+        /* Secciones de Información */
+        .info {
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box;
+
+        }
+
+        .info:nth-child(even) {
+            background: rgba(240, 240, 240, 0);
+        }
+
+        .info h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .info p {
+            max-width: 600px;
+            line-height: .6;
+        }
+
+        /*seccion 01*/
+        #hero{
+        background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0) 40%);
+        }
+
+        .hero-content{
+            color: #000000;
+            width: 40%;
+            padding: 55px;
+        }
+
+        .hero-content:hover{
+            color: #ffffff;
+            background-color: #ff0000;
+            transition: background-color 0.5s ease-in;
+
+        }
+
+        /*seccion 02*/
+        #beneficios{
+        background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0) 40%);
+   
+        }
+
+        .beneficios-content{
+            color: #000000;
+            width: 40%;
+            padding: 55px;
+        }
+
+        .beneficios-content:hover{
+            color: #ffffff;
+            background-color: #ff0000;
+            transition: background-color 0.5s ease-in;
+
+        }
+        /*seccion 03*/
+       /* Estilo para la sección conocer */
+#conocer {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 40px 0; /* Agregamos un poco de espacio alrededor */
+}
+
+.conocer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background-color: #333;
+    color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para las tarjetas */
+}
+
+/* Usamos la imagen como fondo */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Hacemos que la imagen no sea visible */
+}
+
+/* Imagen como fondo */
+.card {
+    background-image: url('Images/7.jpg'); /* Agrega aquí el nombre de la imagen */
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Controla la altura de la tarjeta */
+}
+
+/* Contenido encima de la imagen */
+.card .content {
+    position: absolute;
+    top: 50%; /* Centra el texto verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo del texto dentro de la tarjeta */
+.card h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+/* Estilo para el botón */
+.card a {
+    display: block;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px 20px 20px;
+    border-radius: 5px;
+    font-weight: 300;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 10px; /* Posiciona el botón al fondo de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el botón */
+}
+
+.card a:hover {
+    background-color: darkred;
+}
+
+/* Efecto al pasar el mouse por encima */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+
+        /*boton*/
+  
+    .cta-button {
+    position: fixed;
+    z-index: 1001;
+    background-color: #000000;
+    font-size: 30px;
+    color: white;
+    right:0;
+    bottom: 20%;
+    padding: 10px 80px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff0000; /* Cambio de color al hacer hover */
+}
+
+@media (max-width: 768px) {
+    .conocer-content {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Fijo -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo_firma_car.png" alt="Logo de Firma Car">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="arrendamiento.html">Arrendamiento</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html" class="contact">Contacto</a></li>
+                <li><a href="acceso-en-linea.html">Acceso en línea</a></li>
+            </ul>
+            <div class="search-icon">&#128269;</div>
+        </nav>
+    </header>
+    <div class="contacto">
+    <a href="contacto.html" class="cta-button">CONTÁCTANOS</a>
+</div>
+
+
+    <!-- Carrusel de Imágenes -->
+    <section class="carousel">
+        <div class="carousel-slide active">
+            <img src="Images/4.jpg" alt="Slide 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="Images/5.png" alt="Slide 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="Images/6.png" alt="Slide 3">
+        </div>
+        <!-- Indicadores Circulares -->
+        <div class="indicators">
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </section>
+
+    <!-- Secciones con Información -->
+    <section class="info" id="hero">
+        <div class="hero-content">
+        <h1>Estrena un auto de manera inteligente</h1>
+        <p>Consigue un auto nuevo con las facilidades <br><br>del arrendamiento que tenemos para ti.</p>
+    </div>
+    </section>
+    <section class="info" id="beneficios">
+        <div class="beneficios-content">
+            <h1>Beneficios de nuestro arrendamiento</h1>
+            <ul>
+                <li>Pago inicial mínimo y mensualidades fijas</li>
+                <li>Deducción de hasta el 100% de la renta mensual </li>
+                <li>Aprobación en  24 horas</li>
+                <li>Residual garantizado </li>
+                <li>4 opciones al término del arrendamiento</li>
+            </ul>
+
+    </div>
+    </section>
+    <section class="info" id="conocer">
+        <div class="conocer-content">
+            <div class="card">
+                <img src="Images/4.jpg" alt="Firma Car Medical">
+               
+                <a href="#">CONOCE MÁS</a>
+            </div>
+            <div class="card">
+                <img src="Images/5.png" alt="Firma Car Auto">
+              
+                <a href="#">CONOCE MÁS</a>
+            </div>
+            <div class="card">
+                <img src="Images/6.png" alt="Firma Car Industria">
+              
+                <a href="#">CONOCE MÁS</a>
+            </div>
+    </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+
+            const changeSlide = () => {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentIndex);
+                });
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === currentIndex);
+                });
+            };
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                changeSlide();
+            }, 5000); // Cambia cada 5 segundos
+        });
+    </script>
+</body>
+</html>
