@@ -1,0 +1,245 @@
+/* Tipografías de Gotham */
+@font-face {
+    font-family: 'Gotham-bold';
+    src: url('fonts/GothamBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham-light';
+    src: url('fonts/Gotham-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+h1{
+    font-family: 'Gotham-bold';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+
+}
+
+h2{
+    font-family: 'Gotham-bold';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+
+}
+
+p{
+    font-weight: 'Gotham-light';
+    font-weight: 300;
+    font-size: 1.15rem;
+}
+
+label{
+    font-weight: 'Gotham-light';
+    font-weight: 300;
+    font-size: 1.15rem;
+}
+
+input{
+    font-weight: 'Gotham-light';
+    font-weight: 300;
+    font-size: 1.15rem;
+}
+
+     .social-icons a {
+            color: black; /* Íconos en negro */
+            font-size: 2rem; /* Tamaño ajustable */
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover,  .whatsapp-button:hover {
+            color: #ff0303; /* Color al pasar el cursor */
+            transform: scale(1.4); 
+        }
+
+        .whatsapp-container {
+            position: fixed;
+            bottom: 20%; /* Distancia desde la parte inferior */
+            right: 20px; /* Distancia desde la derecha */
+            z-index: 1000; /* Asegura que quede al frente */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espaciado entre el botón y el contenedor */
+        }
+
+         .whatsapp-button {
+            background-color: #000000; /* Color característico de WhatsApp */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info {
+            font-family: 'Gotham-light';
+            background-color: #000000;
+            border-radius: 10px;
+            padding: 10px 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info p {
+            color: aliceblue;
+            margin: 0;
+        }
+
+       
+        /* Carrusel ocupa toda la pantalla */
+        .carousel-item {
+            height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+        }
+
+        .carousel-item img {
+            object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Asegurar que el contenido quede por encima del carrusel */
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Fondo del carrusel */
+        #carouselBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Detrás del contenido */
+            overflow: hidden;
+        }
+
+        #carouselBackground::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 25%, rgba(255, 255, 255, 0) 70%);
+            z-index: 2; /* Encima de las imágenes, pero detrás del contenido */
+            pointer-events: none; /* Permite interactuar con el carrusel y contenido */
+        }
+
+        .second-section {
+            position: absolute;
+            top: 100vh; /* Ubica la sección justo después del carrusel */
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco semi-transparente */
+            padding: 0px 0px;
+            z-index: 2; /* Por encima del carrusel */
+        }
+         /* Cuadro de texto centrado pero alineado a la izquierda */
+         .text-box, .text-box-faq {
+            max-width: 500px;
+            margin-top: 10%;
+            text-align: left;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .text-box-faq {
+            margin-top: 0;
+        }
+        .text-box:hover{
+
+            background-color: #ff0303;
+            color: aliceblue;
+                        transition: background-color 0.5s ease-in;
+
+        }
+
+        .borde-superior{
+            margin-top: 20%;
+        }
+        
+        .estrena, .estrena-2, .estrena-3{
+            margin-top: 40%;
+            max-width: 100%;
+            background-color: rgb(255, 255, 255);
+            height: 100vh;
+            width: 100%;
+            box-shadow: none;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+          
+           }
+
+           .estrena-2{
+            margin-top: 0;
+            color: #ffffff;
+            background-color: rgb(255, 0, 0);
+
+           }
+
+           .estrena-3{
+            margin-top: 0;
+            background-color: rgba(255, 0, 0, 0);
+
+           }
+
+           .estrena-3:hover{
+            background-color: #ffffff00;
+            color: #000000;
+           }
+
+           
+
+           .estrena:hover{
+
+background-color: #ffffff;
+color: rgb(0, 0, 0);
+
+}
+
+.image-container {
+    width: 100%; /* Toma todo el ancho disponible de la columna */
+    aspect-ratio: 1 / 1; /* Hace que el contenedor sea cuadrado */
+    display: flex;
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el contenedor */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.image-container img {
+    width: 100%; /* La imagen ocupa el ancho completo del contenedor */
+    height: auto; /* Mantiene la proporción original */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+}
+
+/* MOVIL*/
+
+@media (min-width: 576px) and (max-width: 768px){
+
+    .second-section{
+        width: 100%;
+    }
+    .text-box{
+        width: 100%;
+    }
+
+  
+
+
+
+}
