@@ -154,20 +154,26 @@
             <div class="col-md-6">
                 <h2 class=" mb-4">¡CONTACTANOS!</h2>
                 <div class="contact-form">
-                    <form action="send_contact.php" method="POST">
-                        <label for="name">Nombre Completo:</label>
-                        <input type="text" id="name" name="name" required>
-        
-                        <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-        
-                        <label for="phone">Teléfono:</label>
-                        <input type="tel" id="phone" name="phone">
-        
-                        <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-        
-                        <button type="submit" class="cta-button">Enviar Mensaje</button>
+                    <form name="contact-form">
+                        <!-- Campo de Nombre -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
+                        </div>
+                        <!-- Campo de Teléfono -->
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+                        </div>
+                        <!-- Campo de Mensaje -->
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+                        </div>
+                        <!-- Botón Enviar -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger">ENVIAR</button>
+                        </div>
                     </form>
                 </div>
                 <!-- Íconos de redes sociales -->
