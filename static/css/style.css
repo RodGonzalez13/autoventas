@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Gotham-bold';
     src: url('fonts/GothamBold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -11,9 +11,40 @@
     src: url('fonts/Gotham-Light.otf') format('opentype');
     font-weight: 300;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.rojo{
+    background: #ff0303;
+}
+
+.footer-button {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-backdrop {
+    z-index: 1040 !important;
+}
+.modal {
+    z-index: 1050 !important;
+}
+
+body.modal-open {
+    overflow: hidden; /* Evita que el contenido detrás del modal sea desplazable */
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1055;
+}
 
 h1{
-    font-family: 'Gotham-bold';
+    font-family: 'Gotham-bold',Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.4rem;
@@ -21,7 +52,7 @@ h1{
 }
 
 h2{
-    font-family: 'Gotham-bold';
+    font-family: 'Gotham-bold',Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.4rem;
@@ -29,19 +60,19 @@ h2{
 }
 
 p{
-    font-weight: 'Gotham-light';
+    font-weight: 'Gotham-light ' ,Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 1.15rem;
 }
 
 label{
-    font-weight: 'Gotham-light';
+    font-weight: 'Gotham-light',Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 1.15rem;
 }
 
 input{
-    font-weight: 'Gotham-light';
+    font-weight: 'Gotham-light',Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 1.15rem;
 }
@@ -58,10 +89,10 @@ input{
         }
 
         .whatsapp-container {
-            position: fixed;
+            position: absolute;
             bottom: 20%; /* Distancia desde la parte inferior */
             right: 20px; /* Distancia desde la derecha */
-            z-index: 1000; /* Asegura que quede al frente */
+            z-index: 10; /* Asegura que quede al frente */
             display: flex;
             align-items: center;
             gap: 10px; /* Espaciado entre el botón y el contenedor */
@@ -71,8 +102,8 @@ input{
             background-color: #000000; /* Color característico de WhatsApp */
             color: white;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -136,7 +167,7 @@ input{
 
         .second-section {
             position: absolute;
-            top: 100vh; /* Ubica la sección justo después del carrusel */
+            top: 20vh; /* Ubica la sección justo después del carrusel */
             left: 0;
             height: 100vh;
             width: 100%;
@@ -147,14 +178,18 @@ input{
          /* Cuadro de texto centrado pero alineado a la izquierda */
          .text-box, .text-box-faq {
             max-width: 500px;
-            margin-top: 10%;
+            margin-top: 0%;
             text-align: left;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0);
             box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
-            
+        
         }
 
+        .text-white{
+            text-align: left;
+            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+        }
         .text-box-faq {
             margin-top: 0;
         }
@@ -225,6 +260,19 @@ color: rgb(0, 0, 0);
     width: 100%; /* La imagen ocupa el ancho completo del contenedor */
     height: auto; /* Mantiene la proporción original */
     object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+}
+
+.contacto{
+    padding: 2% 10%;
+    background-color: #000000;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.contacto:hover{
+    background-color: #ff0000;
+    color: #ffffff;
+    transform: scale(1.4); 
 }
 
 /* MOVIL*/
