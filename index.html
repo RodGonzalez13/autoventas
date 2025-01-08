@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firma_version_domingo</title>
+    <title>Firma Car</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css">
     
@@ -33,7 +33,7 @@
         <div class="container-fluid">
             <!-- Logo alineado a la izquierda -->
             <a class="navbar-brand" href="#">
-                <img src="static/imagenes/logo_firma_car_bajo.png" alt="Logo"  height="70" class="d-inline-block align-text-top">
+                <img src="static/imagenes/logo_firma_car_bajo.png" alt="Logo"  height="90" class="d-inline-block align-text-top">
                
             </a>
 
@@ -46,13 +46,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <!-- Botones de redes sociales alineados a la derecha -->
                 <div class="social-icons d-flex">
-                    <a href="https://facebook.com" target="_blank" class="mx-3" >
+                    <a href="https://www.facebook.com/firmacarleasing" target="_blank" class="mx-3" >
                         <i class="bi bi-facebook"></i> 
                     </a>
-                    <a href="https://twitter.com" target="_blank" class="mx-3">
-                        <i class="bi bi-twitter"></i> 
+                    <a href="https://www.linkedin.com/company/firma-car-leasing/?viewAsMember=true" target="_blank" class="mx-3">
+                        <i class="bi bi-linkedin"></i> 
                     </a>
-                    <a href="https://instagram.com" target="_blank" class="mx-3">
+                    <a href="https://www.instagram.com/firmacarleasing/" target="_blank" class="mx-3">
                         <i class="bi bi-instagram"></i> 
                     </a>
                 </div>
@@ -64,7 +64,7 @@
     <section class="vh-100  d-flex align-items-center justify-content-center">
         <div class="container text-center ms-0">
             <div class="text-box">
-            <h1>Estrrena un auto de manera inteligente</h1>
+            <h1>Estrena un auto de manera inteligente</h1>
             <p>Somos una empresa de arrendamiento puro/ leasing de automóviles</p>
         </div>
         </div>
@@ -87,11 +87,11 @@
     </section>
 
 <!-- tercer Sección de 100vh -->
-    <section class="min-vh-100 bg-white d-flex align-items-center justify-content-center p-3">
-        <div class="container ">
+    <section class=" custom-container min-vh-100 bg-white d-flex align-items-center justify-content-center p-0">
+        <div class="container  m-0 p-0">
             <div class="row ">
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                 <h2>ESTRENA EN 5 PASOS</h2>
                 <p>1. Elige la marca, versión y modelo de auto que deseas <br>
                     2. Cotiza el plan que mejor se acomode a tus necesidades <br>
@@ -102,14 +102,14 @@
                     </p>
             </div>
          
-            <div class="col-md-3 d-flex justify-content-center">
+            <div class="col-md-4 d-flex justify-content-center">
                 <div class="image-container">
                 <img src="static/imagenes/10.png" class="img-fluid" alt="Imagen 10">
             </div>
             </div>
         
             <!-- Segunda columna de imagen -->
-            <div class="col-md-3 d-flex justify-content-center">
+            <div class="col-md-4 d-flex justify-content-center">
                 <div class="image-container">
                 <img src="static/imagenes/11.png" class="img-fluid" alt="Imagen 11">
             </div>
@@ -119,6 +119,12 @@
         </div>
     </section>
 
+    <!--INBETWEEN DE FORMULARIO-->
+    <section class="container-fluid h-50 bg-white d-flex align-items-center justify-content-center blanco pb-5">
+            <button type="button" class="btn  btn-lg contacto" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <h1>!Contáctanos!</h1>
+            </button>
+    </section>
 
     <!--CUARTA SECCION-->
 <section class="container-fluid min-vh-100  d-flex align-items-center justify-content-center rojo">
@@ -194,12 +200,43 @@
     </div>
 </section>
 
- <!-- QUINTA SECCION de 100vh -->
- <section class="vh-100  d-flex align-items-center justify-content-center">
+ <!-- QUINTA SECCION FORMULARIO de 100vh -->
+
+ <section class="container-fluid min-vh-100  d-flex align-items-center justify-content-center ">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Formulario de Contacto</h1>
+        <form class="w-50 mx-auto">
+          <!-- Campo para el nombre -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+          </div>
+    
+          <!-- Campo para el teléfono -->
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+          </div>
+    
+          <!-- Campo para el mensaje -->
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+          </div>
+    
+          <!-- Botón de enviar -->
+          <button type="submit" class="btn btn-danger"><h1>Enviar</h1></button>
+        </form>
+      </div>
+</section>
+
+
+ <!-- SEXTA SECCION de 100vh -->
+ <section class="h-50  d-flex align-items-center justify-content-center pb-5">
     <div class="container text-center">
-        <button type="button" class="btn  btn-lg contacto" data-bs-toggle="modal" data-bs-target="#contactModal">
+       <!-- <button type="button" class="btn  btn-lg contacto" data-bs-toggle="modal" data-bs-target="#contactModal">
             <h1>!Contáctanos!</h1>
-        </button>
+        </button>-->
 
         <div class=" mt-5 social-icons">
             <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -209,7 +246,7 @@
     </div>
 </section>
 
- 
+
 
 </div>
 
@@ -258,7 +295,7 @@
     <div class="whatsapp-container">
         <!-- Botón de WhatsApp -->
         <a href="https://wa.me/525570120611" target="_blank" class="whatsapp-button">
-            <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
+            <i class="bi bi-whatsapp" style="font-size: 2.8rem;"></i>
         </a>
         <!-- Contenedor con captura y texto -->
         <!--<div class="contact-info">
@@ -301,22 +338,25 @@ document.querySelector('.btn-close').addEventListener('click', function () {
 
 </script>
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6V4G3trh_ZECaCModmFR2QKfc9FCmFmkP4yPLPx1qy7j4yVYwy6midawriFaAnyOXbw/exec'
-    const form = document.forms['contact-form']
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6V4G3trh_ZECaCModmFR2QKfc9FCmFmkP4yPLPx1qy7j4yVYwy6midawriFaAnyOXbw/exec';
+    const form = document.forms['contact-form'];
 
     form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => alert("Gracias por tu mensaje, en breve nos comunicamos contigo." ))
-    .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message))
-    })
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Gracias por tu mensaje, en breve nos comunicamos contigo."))
+            .catch(error => console.error('Error!', error.message));
+    });
+});
 </script> 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </body>
 </html>

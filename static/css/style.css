@@ -71,6 +71,17 @@ label{
     font-size: 1.15rem;
 }
 
+.form-label, .form-control{
+    font-family: 'Gotham-bold',Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.form-control{
+    background-color: #ffffff8a;
+}
+
+
+
 input{
     font-weight: 'Gotham-light',Arial, Helvetica, sans-serif;
     font-weight: 300;
@@ -83,15 +94,20 @@ input{
             margin-left: 0.5rem;
             transition: transform 0.3s ease;
         }
-        .social-icons a:hover,  .whatsapp-button:hover {
+        .social-icons a:hover  {
             color: #ff0303; /* Color al pasar el cursor */
             transform: scale(1.4); 
         }
 
+        .whatsapp-button:hover{
+            transform: scale(1.4); 
+        }
+
+
         .whatsapp-container {
             position: absolute;
             bottom: 20%; /* Distancia desde la parte inferior */
-            right: 20px; /* Distancia desde la derecha */
+            right: 30px; /* Distancia desde la derecha */
             z-index: 10; /* Asegura que quede al frente */
             display: flex;
             align-items: center;
@@ -99,11 +115,11 @@ input{
         }
 
          .whatsapp-button {
-            background-color: #000000; /* Color característico de WhatsApp */
+            background-color: #02da14; /* Color característico de WhatsApp */
             color: white;
             border-radius: 50%;
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -243,6 +259,10 @@ input{
 background-color: #ffffff;
 color: rgb(0, 0, 0);
 
+}
+
+.estrena{
+    font-size: 2em;
 }
 
 .image-container {
