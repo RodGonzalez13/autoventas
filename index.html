@@ -338,17 +338,11 @@ document.querySelector('.btn-close').addEventListener('click', function () {
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwcvzQMkq80dImyZTgbirs_cOFaNRmlyxctboEG3HzmR-o66YNTS26Y4bNe8fM9viAGbA/exec';
 
-form.addEventListener('submit', e => {
+document.forms['contact-form'].addEventListener('submit', e => {
   e.preventDefault();
-
-  // Mostrar mensaje de éxito inmediato
-  alert('Gracias por tu mensaje.');
-
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(response => console.log('Formulario enviado con éxito'))
+  fetch(scriptURL, { method: 'POST', body: new FormData(e.target) })
+    .then(response => alert('Gracias por tu mensaje.'))
     .catch(error => console.error('Error!', error.message));
-
-  form.reset(); // Opcional: Limpia el formulario
 });
 
 </script>
