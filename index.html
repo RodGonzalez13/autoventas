@@ -209,19 +209,19 @@
           <!-- Campo para el nombre -->
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
           </div>
     
           <!-- Campo para el teléfono -->
           <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required>
           </div>
     
           <!-- Campo para el mensaje -->
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
           </div>
     
           <!-- Botón de enviar -->
@@ -261,21 +261,21 @@
             </div>
             <!-- Body del modal -->
             <div class="modal-body">
-                <form>
+                <form name="contact-form">
                     <!-- Campo de Nombre -->
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
                     </div>
                     <!-- Campo de Teléfono -->
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+                        <input type="tel" class="form-control" id="tabindex" name="telefono" placeholder="Ingresa tu número de teléfono" required>
                     </div>
                     <!-- Campo de Mensaje -->
                     <div class="mb-3">
                         <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea>
                     </div>
                     <!-- Botón Enviar -->
                     <div class="d-grid">
@@ -333,20 +333,17 @@ document.querySelector('.btn-close').addEventListener('click', function () {
     modal.classList.remove('show');
     modal.style.display = 'none';
     document.body.classList.remove('modal-open');
-
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6V4G3trh_ZECaCModmFR2QKfc9FCmFmkP4yPLPx1qy7j4yVYwy6midawriFaAnyOXbw/exec'
-    const form = document.forms['contact-form']
-
-
-    form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => alert("Gracias por tu mensaje, en breve nos comunicamos contigo." ))
-    .then(() => { window.location.reload(); })
-    .catch(error => console.error('Error!', error.message))
-    })
+    
 });
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwcvzQMkq80dImyZTgbirs_cOFaNRmlyxctboEG3HzmR-o66YNTS26Y4bNe8fM9viAGbA/exec';
+
+document.forms['contact-form'].addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(e.target) })
+    .then(response => alert('Gracias por tu mensaje.'))
+    .catch(error => console.error('Error!', error.message));
+});
 
 </script>
 
