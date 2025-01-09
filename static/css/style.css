@@ -297,7 +297,7 @@ color: rgb(0, 0, 0);
 
 /* MOVIL*/
 
-@media (min-width: 576px) and (max-width: 768px){
+@media (max-width: 768px){
 
     .second-section{
         width: 100%;
@@ -306,8 +306,14 @@ color: rgb(0, 0, 0);
         width: 100%;
     }
 
-  
+  p{
+    font-size: 1em;
+  }
+  h1, h2, h3{
+    font-size: 1.2em;
+  }
 
-
-
+  .whatsapp-container{
+    bottom: 10%;
+  }
 }

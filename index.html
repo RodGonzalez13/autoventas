@@ -91,7 +91,7 @@
         <div class="container  m-0 p-0">
             <div class="row ">
 
-                <div class="col-md-4">
+                <div class="col-md-4 p-5">
                 <h2>ESTRENA EN 5 PASOS</h2>
                 <p>1. Elige la marca, versión y modelo de auto que deseas <br>
                     2. Cotiza el plan que mejor se acomode a tus necesidades <br>
@@ -120,14 +120,14 @@
     </section>
 
     <!--INBETWEEN DE FORMULARIO-->
-    <section class="container-fluid h-50 bg-white d-flex align-items-center justify-content-center blanco pb-5">
+    <section class="container-fluid h-50 bg-white d-flex align-items-center justify-content-center blanco p-5">
             <button type="button" class="btn  btn-lg contacto" data-bs-toggle="modal" data-bs-target="#contactModal">
                 <h1>!Contáctanos!</h1>
             </button>
     </section>
 
     <!--CUARTA SECCION-->
-<section class="container-fluid min-vh-100  d-flex align-items-center justify-content-center rojo">
+<section class="container-fluid min-vh-100  d-flex align-items-center justify-content-center rojo pt-5 pb-5">
     <div class="container text-center ">
         <!-- Encabezado que ocupa todo el ancho -->
     <header class="text-white text-center py-4">
@@ -205,7 +205,7 @@
  <section class="container-fluid min-vh-100  d-flex align-items-center justify-content-center ">
     <div class="container mt-5">
         <h1 class="text-center mb-4">Formulario de Contacto</h1>
-        <form class="w-50 mx-auto">
+        <form class="min-vw-50 mx-auto">
           <!-- Campo para el nombre -->
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
@@ -261,21 +261,21 @@
             </div>
             <!-- Body del modal -->
             <div class="modal-body">
-                <form name="contact-form">
+                <form>
                     <!-- Campo de Nombre -->
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
                     </div>
                     <!-- Campo de Teléfono -->
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+                        <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
                     </div>
                     <!-- Campo de Mensaje -->
                     <div class="mb-3">
                         <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea>
                     </div>
                     <!-- Botón Enviar -->
                     <div class="d-grid">
@@ -339,24 +339,7 @@ document.querySelector('.btn-close').addEventListener('click', function () {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6V4G3trh_ZECaCModmFR2QKfc9FCmFmkP4yPLPx1qy7j4yVYwy6midawriFaAnyOXbw/exec';
-    const form = document.forms['contact-form'];
-
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => alert("Gracias por tu mensaje, en breve nos comunicamos contigo."))
-            .catch(error => console.error('Error!', error.message));
-    });
-});
-</script> 
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </body>
 </html>
