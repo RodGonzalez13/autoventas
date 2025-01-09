@@ -205,23 +205,23 @@
  <section class="container-fluid min-vh-100  d-flex align-items-center justify-content-center ">
     <div class="container mt-5">
         <h1 class="text-center mb-4">Formulario de Contacto</h1>
-        <form class="min-vw-50 mx-auto">
+        <form class="min-vw-50 mx-auto" name="contact-form">
           <!-- Campo para el nombre -->
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
           </div>
     
           <!-- Campo para el teléfono -->
           <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
           </div>
     
           <!-- Campo para el mensaje -->
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
           </div>
     
           <!-- Botón de enviar -->
@@ -333,13 +333,26 @@ document.querySelector('.btn-close').addEventListener('click', function () {
     modal.classList.remove('show');
     modal.style.display = 'none';
     document.body.classList.remove('modal-open');
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6V4G3trh_ZECaCModmFR2QKfc9FCmFmkP4yPLPx1qy7j4yVYwy6midawriFaAnyOXbw/exec'
+    const form = document.forms['contact-form']
+
+
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => alert("Gracias por tu mensaje, en breve nos comunicamos contigo." ))
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message))
+    })
 });
 
 
 </script>
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </body>
 </html>
