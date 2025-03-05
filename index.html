@@ -247,18 +247,20 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxljUa4_u6dDNLfMPqZvg-wiTiTRhFOZtDd7uX7-VvWBVhUskutB_5oIgCBBMpijrKCLg/exec';
 
-        function showSuccessMessage(formContainer) {
-            // Crear un mensaje de éxito
+        function showSuccessMessage() {
+            // Crear un mensaje de éxito en la parte superior de la página
             const successMessage = document.createElement('div');
-            successMessage.className = 'alert alert-success alert-dismissible fade show mt-3';
+            successMessage.className = 'alert alert-success alert-dismissible fade show fixed-top mx-auto mt-3';
+            successMessage.style.zIndex = '1050'; // Asegurar que esté encima del contenido
+            successMessage.style.maxWidth = '500px'; // Ancho máximo para centrarlo
             successMessage.role = 'alert';
             successMessage.innerHTML = `
                 <strong>Gracias por su mensaje,</strong> en breve un asesor se pondrá en comunicación.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             `;
 
-            // Insertar el mensaje después del formulario
-            formContainer.appendChild(successMessage);
+            // Insertar el mensaje al inicio del body o en un contenedor específico (por ejemplo, .content)
+            document.querySelector('.content').insertBefore(successMessage, document.querySelector('.content').firstChild);
 
             // Hacer que el mensaje desaparezca después de 5 segundos
             setTimeout(() => {
@@ -270,38 +272,36 @@
             e.preventDefault();
             const formContainer = e.target.parentElement; // Contenedor del formulario
 
+            // Cerrar el modal inmediatamente si es el formulario del modal
+            if (e.target.name === 'modal-contact-form') {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                if (modal) modal.hide();
+            }
+
             fetch(scriptURL, { 
                 method: 'POST', 
                 body: new FormData(e.target),
-                mode: 'no-cors' // Forzar modo no-cors para evitar bloqueo CORS en caso de error
+                mode: 'no-cors' // Forzar modo no-cors para evitar bloqueo CORS
             })
             .then(response => {
                 // Asumimos que si llegamos aquí y no hay un error explícito, los datos se enviaron correctamente
-                // (aunque el navegador puede bloquear la respuesta CORS, los datos llegan al servidor)
-                showSuccessMessage(formContainer);
-
-                // Cerrar el modal solo si es el formulario del modal y está abierto
-                if (e.target.name === 'modal-contact-form') {
-                    const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
-                    if (modal) modal.hide();
-                }
+                showSuccessMessage();
 
                 // Resetear el formulario después de enviarlo
                 e.target.reset();
             })
             .catch(error => {
-                // Solo mostrar el error si no es un error CORS (puedes ajustar esta lógica)
+                // Solo mostrar el error si no es un error CORS
                 if (error.message.includes('CORS policy')) {
-                    // Ignorar el error CORS y mostrar éxito, ya que los datos llegan al servidor
                     console.warn('Error CORS detectado, pero asumimos que los datos se enviaron correctamente.');
-                    showSuccessMessage(formContainer);
+                    showSuccessMessage();
 
+                    // Resetear el formulario y cerrar el modal si es necesario
+                    e.target.reset();
                     if (e.target.name === 'modal-contact-form') {
                         const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
                         if (modal) modal.hide();
                     }
-
-                    e.target.reset();
                 } else {
                     console.error('Error!', error.message);
                     alert('Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.');
